@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+
+    <script src="//unpkg.com/aframe-extras@3.13.1/dist/aframe-extras.min.js"></script>
+
+    <!--Text-->
+    <script
+        src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+
+    <!--Tone-->
+    <script src="//unpkg.com/tone@14.8.25/build/Tone.js"></script>
+
+
+
+
+</head>
+
+<body>
+    <a-scene fog="type: linear; color: orange">
+        <a-asset>
+            <!--qr texture and marker-->
+            <img id="texture" src="assets/pattern-testbarcode.png">
+            <img id="QrCode" src="assets/MordorQr.png">
+
+            <!--Personal font-->
+            <a-asset-item id="optimerBoldFont"
+                src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+            <!--Orc -->
+            <a-asset-item id="mutant" src="assets/mutant.scene.glb"></a-asset-item>
+            <!--Texture for the Crate-->
+            <img id="crate-texture" src="https://aframe.io/sample-assets/assets/images/wood/crate.gif"
+                crossorigin="anonymous">
+        </a-asset>
+
+
+
+
+
+        <a-sky color="#000"></a-sky>
+
+
+        <!--Terrain-->
+
+        <a-entity id="city" movement-controls="speed: -1.45;" position="2 -35 0" gltf-model="assets/city_scene.gltf"
+            scale="500 500 500">
+
+        </a-entity>
+
+        <!--orcs-->
+        <a-entity id="mutant" gltf-model="#mutant" scale="0.12 0.12 0.12" position="-40 -14 -40" rotation="0 180 0"
+            animation-mixer>
+        </a-entity>
+
+        <!--Camera and Light-->
+
+
+        <a-entity camera look-controls="pointerLockEnabled: false;" wasd-controls="acceleration:100" position="0 -6 4"
+            light="type: spot; intensity: 1.8; penumbra: 1; angle: 30;">
+            <!--cursor-->
+            <a-entity cursor position="0 0 -1" geometry="primitive: sphere; radius:0.005" material="color: #fff">
+            </a-entity>
+        </a-entity>
+
+
+        <!--Text-->
+
+        <a-entity id="firstText" text-geometry="value: Watch out for the Orcs..; font: #optimerBoldFont"
+            position="0 2 27.503" rotation="180 0 180"></a-entity>
+        <!--QR code to Glitch page-->
+
+        <a-image id="QR" src="#QrCode" position="8 -4 -3" rotation="0 90 0"></a-image>
+
+        <!--Marker-->
+
+        <a-entity id="link" text-geometry="value: text.. ; font: #optimerBoldFont" position="60 -3 -65"
+            rotation="0 90 0"></a-entity>
+        <a-box material="src: #texture" rotation="90 90 0" position="60 -6 -65"></a-box>
+
+
+        <!-- Crates and with link -->
+        <a-box id="crate" material="src: #crate-texture;" position="-82.6 -6 -8" scale="7 7 7">
+        </a-box>
+
+
+
+    </a-scene>
+
+
+</body>
+
+
+<script>
+    document.querySelector('#crate')
+        .addEventListener('click', e => {
+            location.href = "https://flip-it.glitch.me/"
+        });
+</script>'
+
+</html>
