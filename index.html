@@ -56,11 +56,12 @@
         <!--Camera and Light-->
 
 
-        <a-entity camera look-controls="pointerLockEnabled: false;" wasd-controls="acceleration:100" position="0 -6 4"
+        <a-entity camera look-controls="pointerLockEnabled: false;" wasd-controls="acceleration:85" position="0 0 4"
             light="type: spot; intensity: 1.8; penumbra: 1; angle: 30;">
+            <a-sound src="url(assets/mordor.mp3)" autoplay="true" position="0 0 0" loop="true" volume="0.5"></a-sound>
             <!--cursor-->
-            <a-entity cursor position="0 0 -1" geometry="primitive: sphere; radius:0.005" material="color: #fff">
-            </a-entity>
+            <a-entity cursor position="0 0 -1" geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
+                material="color: #fff; shader: flat"></a-entity>
         </a-entity>
 
 
@@ -70,17 +71,17 @@
             position="0 2 27.503" rotation="180 0 180"></a-entity>
         <!--QR code to Glitch page-->
 
-        <a-image id="QR" src="#QrCode" position="8 -4 -3" rotation="0 90 0"></a-image>
+        <a-image id="QR" src="#QrCode" position="8 -1 -3" rotation="0 90 0"></a-image>
 
         <!--Marker-->
 
-        <a-entity id="link" text-geometry="value: text.. ; font: #optimerBoldFont" position="60 -3 -65"
+        <a-entity id="link" text-geometry="value: text.. ; font: #optimerBoldFont" position="60 3 -65"
             rotation="0 90 0"></a-entity>
-        <a-box material="src: #texture" rotation="90 90 0" position="60 -6 -65"></a-box>
+        <a-box material="src: #texture" rotation="90 0 90" position="60 -0 -65"></a-box>
 
 
         <!-- Crates and with link -->
-        <a-box id="crate" material="src: #crate-texture;" position="-82.6 -6 -8" scale="7 7 7">
+        <a-box id="crate" material="src: #crate-texture;" position="150 -0.343 -205" scale="7 7 7">
         </a-box>
 
 
@@ -90,12 +91,21 @@
 
 </body>
 
+<!--
+    window.onclick = async function makeNoise() {
 
+        //start up the audio machinery
+        await Tone.start();
+        const player = new Tone.Player({ url: 'https://cdn.glitch.com/288c61dc-b760-46bb-967a-6ebd58a59883%2FMisha%20%26%20Team%203.wav?v=1621857843842' }).toDestination()
+        await Tone.loaded();
+        player.start();
+    };-->
 <script>
     document.querySelector('#crate')
         .addEventListener('click', e => {
             location.href = "https://flip-it.glitch.me/"
         });
+
 </script>'
 
 </html>
