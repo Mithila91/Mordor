@@ -49,14 +49,14 @@
         </a-entity>
 
         <!--orcs-->
-        <a-entity id="mutant" gltf-model="#mutant" scale="0.12 0.12 0.12" position="-40 -14 -40" rotation="0 180 0"
+        <a-entity id="mutant" gltf-model="#mutant" scale="0.15 0.15 0.15" position="-40 -16 -40" rotation="0 180 0"
             animation-mixer>
         </a-entity>
 
         <!--Camera and Light-->
 
 
-        <a-entity camera look-controls="pointerLockEnabled: false;" wasd-controls="acceleration:85" position="0 0 4"
+        <a-entity camera look-controls="pointerLockEnabled: false;" wasd-controls="acceleration:85" position="0 1.5 4"
             light="type: spot; intensity: 1.8; penumbra: 1; angle: 30;">
             <a-sound src="url(assets/mordor.mp3)" autoplay="true" position="0 0 0" loop="true" volume="0.5"></a-sound>
             <!--cursor-->
@@ -71,13 +71,13 @@
             position="0 2 27.503" rotation="180 0 180"></a-entity>
         <!--QR code to Glitch page-->
 
-        <a-image id="QR" src="#QrCode" position="8 -1 -3" rotation="0 90 0"></a-image>
+        <a-image id="QR" src="#QrCode" position="8 2 -3" rotation="0 90 0"></a-image>
 
         <!--Marker-->
 
-        <a-entity id="link" text-geometry="value: what do you see?.. ; font: #optimerBoldFont" position="60 3 -65"
+        <a-entity id="link" text-geometry="value: what do you see?.. ; font: #optimerBoldFont" position="60 5.5 -65"
             rotation="180 145 180"></a-entity>
-        <a-box material="src: #texture" rotation="90 0 90" position="63 -0 -65"></a-box>
+        <a-box material="src: #texture" rotation="90 0 90" position="63 2.5 -65"></a-box>
 
 
         <!-- Crates and with link -->
