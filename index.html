@@ -12,12 +12,23 @@
     <!--Tone-->
     <script src="//unpkg.com/tone@14.8.25/build/Tone.js"></script>
 
+    <link rel="stylesheet" href="style.css" />
 
 
 
 </head>
 
 <body>
+    <div class="instruction-container" id="hide-div">
+        <h1>This is Mordor</h1>
+
+        <p>Look for your way to the black gate. <br><br>
+
+        </p>
+        <button id="btn" onclick="hide()">START</button>
+
+    </div>
+
     <a-scene fog="type: linear; color: orange">
         <a-asset>
             <!--qr texture and marker-->
@@ -106,6 +117,15 @@
             location.href = "https://flip-it.glitch.me/"
         });
 
-</script>'
+    function hide() {
+        let x = document.getElementById('hide-div')
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+</script>
 
 </html>

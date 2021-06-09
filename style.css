@@ -1,0 +1,44 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@500&display=swap');
+
+
+.instruction-container{
+    position: fixed;
+    top: 0; 
+    left: 0;
+    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+    z-index: 999;
+    border: 1px solid #fff;
+    background-color: rgba(55, 22, 1, 0.9);
+    padding: 1rem 2rem 5rem 2rem;
+    width: 50%;
+    display: block;
+}
+
+h1,h2,p{
+    text-align: center;
+    color: #fff;
+    font-family: "Orbitron";
+}
+p{
+    font-size: 20px;
+}
+
+#btn{
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 12px 30px;
+    font-family: "Orbitron";
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    border: #fff solid  0.2rem;
+    background-color:rgba(55, 22, 1, 0.9);
+}
+
+#btn:hover{
+    opacity:0.3;
+
+}
